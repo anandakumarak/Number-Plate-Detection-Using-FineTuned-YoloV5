@@ -1,0 +1,7 @@
+train: "D:\\mrg\\train\\images" # train images (relative to 'path') 128 images
+val: "D:\\mrg\\val\\images" # val images (relative to 'path') 128 images
+test: "D:\\mrg\\test"
+
+# Classes
+nc: 1 # number of classes
+names: ["licence"] # class names

@@ -1,0 +1,1 @@
+python "D:\PROJECTS\BIT_HACK\numberplaterecognition-main\yolov5-master\train.py" --img 640 --batch 16 --epochs 50 --data "D:\PROJECTS\BIT_HACK\model_training\custom.yaml" --weights yolov5x.pt --nosave --cache
