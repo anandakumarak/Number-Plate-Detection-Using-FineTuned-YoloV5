@@ -7,7 +7,6 @@ import re
 import numpy as np
 import easyocr
 import pandas as pd
-import csv
 import uuid
 import os
 
@@ -18,7 +17,7 @@ OCR_TH = 0.2
 
 
 
-def save_results(text,region,csv_filename,folder_path):
+def save_results(region,folder_path):
     img_name = '{}.jpg'.format(uuid.uuid1())
     
     cv2.imwrite(os.path.join(folder_path, img_name), region)
@@ -138,7 +137,7 @@ def main(img_path=None, vid_path=None,vid_out = None):
     print(f"[INFO] Loading model... ")
     ## loading the custom trained model
     # model =  torch.hub.load('ultralytics/yolov5', 'custom', path='last.pt',force_reload=True) ## if you want to download the git repo and then run the detection
-    model =  torch.hub.load("D:\\PROJECTS\\BIT_HACK\\numberplaterecognition-main\\yolov5-master", 'custom', source ='local', path='best.pt',force_reload=True) ### The repo is stored locally
+    model =  torch.hub.load("D:\\Projects\\Bit_Hack\\numberplaterecognition-main\\yolov5-master", 'custom', source ='local', path='D:\\Projects\\Bit_Hack\\numberplaterecognition-main\\best.pt',force_reload=True) ### Load your trained model or my pretrained model
 
     classes = model.names ### class names in string format
 
@@ -229,9 +228,9 @@ def main(img_path=None, vid_path=None,vid_out = None):
 ### -------------------  calling the main function-------------------------------
 
 
-#main(vid_path="./test_images/vid_1.mp4",vid_out="vid_1.mp4") ### for custom video
-#main(vid_path=0,vid_out="webcam_facemask_result1.mp4") #### for webcam
+#main(vid_path="D:\\Projects\\Bit_Hack\\numberplaterecognition-main\\test1.mp4",vid_out="vid_1.mp4") ### for custom video vid_path = "video_directory"
+main(vid_path=0,vid_out="webcam_facemask_result1.mp4") #### for webcam
 
-main(img_path='D:\\PROJECTS\\BIT_HACK\\numberplaterecognition-main\\test_images\\bus.jpg') ## for image
+#main(img_path='D:\\PROJECTS\\BIT_HACK\\numberplaterecognition-main\\test_images\\bus.jpg') ## for image img_path = 'image_directory'
             
 

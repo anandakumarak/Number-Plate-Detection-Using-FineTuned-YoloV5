@@ -1,0 +1,3 @@
+Run this command in terminal where yolo pretrained model is there,
+
+python "Your-Directory\yolov5-master\train.py" --img 640 --batch 16 --epochs 50 --data "Your-Directory\custom.yaml" --weights yolov5x.pt --nosave --cache
